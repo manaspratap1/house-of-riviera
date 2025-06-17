@@ -5,11 +5,18 @@ require('dotenv').config();
 
 const app = express();
 
+const allowedOrigins = ['https://houseofrevera.vercel.app', 'http://localhost:5500'];
+
 app.use(cors({
-  origin: ['http://127.0.0.1:5500', 'https://houseofrevera.vercel.app/'], // replace with your actual Render static site URL
-  methods: ['GET', 'POST'],
-  credentials: true
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
 }));
+
 app.use(express.json());
 app.use('/api/contact', contactRoutes);
 
