@@ -6,7 +6,7 @@ require('dotenv').config();
 const app = express();
 
 app.use(cors({
-  origin: ['http://127.0.0.1:5500', 'https://your-frontend-render-url.com'], // replace with your actual Render static site URL
+  origin: ['http://127.0.0.1:5500', 'https://houseofrevera.vercel.app/'], // replace with your actual Render static site URL
   methods: ['GET', 'POST'],
   credentials: true
 }));
