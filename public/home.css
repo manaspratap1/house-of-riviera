@@ -163,6 +163,28 @@ header.navbar {
   font-size: 1rem;
 }
 
+.form-response {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  display: inline-block;
+  max-width: 100%;
+  text-align: center;
+}
+
+.form-response.success {
+  background-color: #28a745;
+  color: white;
+}
+
+.form-response.error {
+  background-color: #dc3545;
+  color: white;
+}
+
+
 /* Responsive */
 @media screen and (max-width: 768px) {
   header.navbar {
